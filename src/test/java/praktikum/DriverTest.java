@@ -59,7 +59,7 @@ public class DriverTest {
                 return new ChromeDriver();
 
             default:
-                throw new IllegalArgumentException("We don't provide this browser in owr code");
+                throw new IllegalArgumentException("Мы не предоставляем этот браузер в нашем коде.");
         }
     }
 }
