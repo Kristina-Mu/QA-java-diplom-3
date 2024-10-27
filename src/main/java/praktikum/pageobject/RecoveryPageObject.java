@@ -13,7 +13,6 @@ public class RecoveryPageObject extends DriverClass {
         super(driver);
     }
 
-    @Step("Нажимаем на ссылку 'Войти' на странице восстановления пароля")
     public void clickEnterButtonFromRecoveryPasswordPage() {
         driver.findElement(enterButtonFromRecoveryPasswordPage).click();
     }

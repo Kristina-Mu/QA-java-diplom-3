@@ -24,25 +24,21 @@ public class ConstructorPageObject extends DriverClass {
         super(driver);
     }
 
-    @Step("Нажимаем на тему конструктора")
     public void clickToLinkToConstructor() {
         WebElement wb = driver.findElement(linkToConstructor);
         wb.click();
     }
 
-    @Step("Получаем текст из темы конструктора")
     public String getTextFromConstructorTopic() {
         WebElement wb = driver.findElement(constructorTopic);
         return wb.getText();
     }
 
-    @Step("Нажимаем на основной логотип")
     public void clickToStellarBurgersLogoLink() {
         WebElement wb = driver.findElement(stellarBurgersLogoLink);
         wb.click();
     }
 
-    @Step("Нажимаем на булку в конструкторе и получаем класс для проверки активности")
     public String clickToBunMakeItActive() {
         WebElement wb = driver.findElement(bunsTopic);
         wb.click();
@@ -51,14 +47,12 @@ public class ConstructorPageObject extends DriverClass {
         return wb.getAttribute("class");
     }
 
-    @Step("Нажимаем на соусы в конструкторе и получаем класс для проверки активности")
     public String clickToSousesMakeItActive() {
         WebElement wb = driver.findElement(sousesTopic);
         wb.click();
         return wb.getAttribute("class");
     }
 
-    @Step("Нажимаем на начинки в конструкторе и получаем класс для проверки активности")
     public String clickToFillingsMakeItActive() {
         WebElement wb = driver.findElement(fillingsTopic);
         wb.click();
@@ -67,14 +61,12 @@ public class ConstructorPageObject extends DriverClass {
         return wb.getAttribute("class");
     }
 
-    @Step("Ожидание изменения состояния класса")
     public String waitForClassToBecomeActive(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return element.getAttribute("class");
     }
 
-    @Step("Получаем локатор булок")
     public By getBunsTopicLocator() {
         return bunsTopic;
     }

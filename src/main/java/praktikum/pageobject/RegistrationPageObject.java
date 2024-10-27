@@ -18,32 +18,26 @@ public class RegistrationPageObject extends DriverClass {
         super(driver);
     }
 
-    @Step("Нажимаем на ссылку 'Войти' на форме регистрации")
     public void clickToLinkInRegistrationForm() {
         driver.findElement(enterLinkInRegistrationForm).click();
     }
 
-    @Step("Заполняем поле 'Электронная почта'")
     public void emailFieldFillingThroughRegistration(String email) {
         driver.findElement(emailField).sendKeys(email);
     }
 
-    @Step("Заполняем поле 'Имя'")
     public void nameFieldFillingThroughRegistration(String name) {
         driver.findElement(nameField).sendKeys(name);
     }
 
-    @Step("Заполняем поле 'Пароль'")
     public void passwordFieldFillingThroughRegistration(String password) {
         driver.findElement(passwordField).sendKeys(password);
     }
 
-    @Step("Нажимаем кнопку регистрации для завершения регистрации")
     public void clickRegistrationButton() {
         driver.findElement(registrationButton).click();
     }
 
-    @Step("Получаем сообщение об ошибке при попытке ввести пароль менее 5 символов")
     public String getErrorMessageWhenIncorrectPassword() {
         return driver.findElement(ErrorMessage).getText();
     }

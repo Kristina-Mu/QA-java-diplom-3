@@ -13,7 +13,6 @@ public class UserAPI {
     final static String USERLOGIN = "/api/auth/login";
     final static String USERLOGOUT = "api/auth/logout";
 
-    @Step("Выполняем POST-запрос для создания пользователя")
     public static Response createUser(UserData userData) {
 
         Response response = given()
@@ -23,7 +22,6 @@ public class UserAPI {
         return response;
     }
 
-    @Step("Выполняем POST-запрос для авторизации пользователя")
     public static Response authorizedUser(UserData userData){
 
         Response response = given()
@@ -33,7 +31,6 @@ public class UserAPI {
         return response;
     }
 
-    @Step("Получаем токен пользователя")
     public static String getToken (UserData userData){
         String token = UserAPI.authorizedUser(userData).body().asString();
         String[] split = token.split(" ");
@@ -41,7 +38,6 @@ public class UserAPI {
         return tokenNumber;
     }
 
-    @Step("Выполняем DELETE-запрос для удаления пользователя")
     public static Response deleteUser(String token, UserData userData){
 
         Response response = given()
@@ -53,7 +49,6 @@ public class UserAPI {
     }
 
 
-    @Step("Выполняем запрос для выхода из системы")
     public static ValidatableResponse makeLogout(String token){
         AccessToken refreshToken = new AccessToken(token);
 

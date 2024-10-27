@@ -19,14 +19,12 @@ public class PersonalAreaPageObject extends DriverClass {
         super(driver);
     }
 
-    @Step("Нажимаем кнопку для выхода из личного кабинета")
     public void clickExitButtonFromPersonalArea() {
         WebElement wb = driver.findElement(exitButton);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("arguments[0].click();", wb);
     }
 
-    @Step("Получаем текст информации из личного кабинета")
     public String checkInformationBlock() {
         WebElement wb = driver.findElement(informationBlock);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -34,7 +32,6 @@ public class PersonalAreaPageObject extends DriverClass {
         return wb.getText();
     }
 
-    @Step("Ждем, пока кнопка выхода из личного кабинета станет видимой")
     public void waitExitButtonVisibility() {
         new WebDriverWait(driver, Duration.ofSeconds(30))
                 .until(ExpectedConditions.visibilityOfElementLocated(exitButton));

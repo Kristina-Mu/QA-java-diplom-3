@@ -20,39 +20,32 @@ public class AuthorizationPageObject extends DriverClass {
         super(driver);
     }
 
-    @Step("Заполняем поле 'Электронная почта'")
     public void fillingTheEmailField(String email) {
         driver.findElement(authorizationEmail).sendKeys(email);
     }
 
-    @Step("Заполняем поле 'Пароль'")
     public void fillingThePasswordField(String password) {
         driver.findElement(authorizationPassword).sendKeys(password, Keys.ENTER);
     }
 
-    @Step("Нажимаем на ссылку регистрации из формы авторизации")
     public void clickTheLinkToRegistrationPageFromAuthorizationPage() {
         driver.findElement(linkToRegistrationPageFromAuthorizationPage).click();
     }
 
-    @Step("Нажимаем на ссылку восстановления пароля из формы авторизации")
     public void clickThePasswordRecoveryLink() {
         driver.findElement(passwordRecoveryLink).click();
     }
 
-    @Step("Ждем, пока тема 'Имя' станет видимой")
     public void waitNameTopicVisibility() {
         new WebDriverWait(driver, Duration.ofSeconds(100))
                 .until(ExpectedConditions.visibilityOfElementLocated(nameTopic));
     }
 
-    @Step("Получаем текст из темы 'Имя'")
     public String getTextFromTopicName() {
         WebElement wb = driver.findElement(nameTopic);
         return wb.getText();
     }
 
-    @Step("Получаем текст из вопроса на форме авторизации")
     public String getTextFromQuestionOnAuthorizationForm() {
         driver.get("https://stellarburgers.nomoreparties.site/login");
         driver.navigate().refresh();
