@@ -1,0 +1,81 @@
+{
+  "uid" : "aba0733dbddad0d4",
+  "name" : "checkPossibilityToGetPersonalArea",
+  "fullName" : "praktikum.PersonalAreaTest.checkPossibilityToGetPersonalArea",
+  "historyId" : "1df4ff311b2d75ea9d26ceff346d71d1",
+  "time" : {
+    "start" : 1730061049256,
+    "stop" : 1730061059071,
+    "duration" : 9815
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Проверяем возможность доступа к личному кабинету",
+      "time" : {
+        "start" : 1730061055953,
+        "stop" : 1730061057234,
+        "duration" : 1281
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "praktikum"
+  }, {
+    "name" : "testClass",
+    "value" : "praktikum.PersonalAreaTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "checkPossibilityToGetPersonalArea"
+  }, {
+    "name" : "suite",
+    "value" : "praktikum.PersonalAreaTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Kristina.local"
+  }, {
+    "name" : "thread",
+    "value" : "27977@MacBook-Air-Kristina.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "aba0733dbddad0d4.json",
+  "parameterValues" : [ ]
+}

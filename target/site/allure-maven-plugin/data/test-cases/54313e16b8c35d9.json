@@ -1,0 +1,81 @@
+{
+  "uid" : "54313e16b8c35d9",
+  "name" : "checkToMoveOnMainLogo",
+  "fullName" : "praktikum.PersonalAreaTest.checkToMoveOnMainLogo",
+  "historyId" : "d8bdc1fb811f724b666bb3db952f6761",
+  "time" : {
+    "start" : 1730060764462,
+    "stop" : 1730061049254,
+    "duration" : 284792
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Проверяем возможность перехода на главную страницу через логотип",
+      "time" : {
+        "start" : 1730061046056,
+        "stop" : 1730061047387,
+        "duration" : 1331
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "praktikum"
+  }, {
+    "name" : "testClass",
+    "value" : "praktikum.PersonalAreaTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "checkToMoveOnMainLogo"
+  }, {
+    "name" : "suite",
+    "value" : "praktikum.PersonalAreaTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Kristina.local"
+  }, {
+    "name" : "thread",
+    "value" : "27977@MacBook-Air-Kristina.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "54313e16b8c35d9.json",
+  "parameterValues" : [ ]
+}

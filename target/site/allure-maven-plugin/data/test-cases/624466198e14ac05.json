@@ -1,0 +1,81 @@
+{
+  "uid" : "624466198e14ac05",
+  "name" : "checkLoginViaEnterInAccountButton",
+  "fullName" : "praktikum.AuthorizationTest.checkLoginViaEnterInAccountButton",
+  "historyId" : "b83b16e5bda27b7950ae4c4a91f008a4",
+  "time" : {
+    "start" : 1730061083657,
+    "stop" : 1730061093883,
+    "duration" : 10226
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Проверяем вход через кнопку 'Войти в аккаунт'",
+      "time" : {
+        "start" : 1730061091334,
+        "stop" : 1730061092042,
+        "duration" : 708
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "praktikum"
+  }, {
+    "name" : "testClass",
+    "value" : "praktikum.AuthorizationTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "checkLoginViaEnterInAccountButton"
+  }, {
+    "name" : "suite",
+    "value" : "praktikum.AuthorizationTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Kristina.local"
+  }, {
+    "name" : "thread",
+    "value" : "27977@MacBook-Air-Kristina.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "624466198e14ac05.json",
+  "parameterValues" : [ ]
+}
