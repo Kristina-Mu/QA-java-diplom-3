@@ -1,7 +1,6 @@
 package praktikum.pageobject;
 
-
-public class User {
+public class UserData {
 
     // поля соответствуют ключам json
 
@@ -11,13 +10,13 @@ public class User {
 
     // добавляем конструкторы: для инициализации полей + пустой для библиотеки
 
-    public User(String email, String password, String name){
+    public UserData(String email, String password, String name){
         this.email = email;
         this.password = password;
         this.name = name;
     }
 
-    public User(){
+    public UserData(){
 
     }
 

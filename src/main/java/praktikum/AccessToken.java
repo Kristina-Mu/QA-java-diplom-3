@@ -1,12 +1,12 @@
 package praktikum;
 
-public class RefreshTokenPOJO {
+public class AccessToken {
     private String token;
-    public RefreshTokenPOJO(String token){
+    public AccessToken(String token){
         this.token = token;
     }
 
-    public RefreshTokenPOJO(){
+    public AccessToken(){
     }
 
     public String getToken() {

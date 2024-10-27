@@ -1,10 +1,11 @@
-package praktikum;
+package praktikum.pageobject;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import praktikum.DriverClass;
 
-public class RegistrationPageObject extends site.stellarburgers.pageobject.DriverClass {
+public class RegistrationPageObject extends DriverClass {
 
     private final By nameField = By.xpath("//*[@id='root']/div/main/div/form/fieldset[1]/div/div/input");
     private final By emailField = By.xpath("//*[@id='root']/div/main/div/form/fieldset[2]/div/div/input");
@@ -17,39 +18,33 @@ public class RegistrationPageObject extends site.stellarburgers.pageobject.Drive
         super(driver);
     }
 
-    @Step("Make click to the link Enter in personal area on the registration form")
+    @Step("Нажимаем на ссылку 'Войти' на форме регистрации")
     public void clickToLinkInRegistrationForm() {
         driver.findElement(enterLinkInRegistrationForm).click();
     }
 
-    @Step("Add email in Email field")
+    @Step("Заполняем поле 'Электронная почта'")
     public void emailFieldFillingThroughRegistration(String email) {
         driver.findElement(emailField).sendKeys(email);
     }
 
-    @Step("Add name in Name field")
+    @Step("Заполняем поле 'Имя'")
     public void nameFieldFillingThroughRegistration(String name) {
         driver.findElement(nameField).sendKeys(name);
     }
 
-    @Step("Add password in the password field")
+    @Step("Заполняем поле 'Пароль'")
     public void passwordFieldFillingThroughRegistration(String password) {
         driver.findElement(passwordField).sendKeys(password);
     }
 
-    @Step("Click the registration button to make registration")
+    @Step("Нажимаем кнопку регистрации для завершения регистрации")
     public void clickRegistrationButton() {
-
         driver.findElement(registrationButton).click();
-
     }
 
-    @Step("Get error message when try to enter password less than 5 characters")
+    @Step("Получаем сообщение об ошибке при попытке ввести пароль менее 5 символов")
     public String getErrorMessageWhenIncorrectPassword() {
         return driver.findElement(ErrorMessage).getText();
     }
-
 }
-
-
-

@@ -1,63 +1,66 @@
 package praktikum;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.junit4.DisplayName;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
+import io.qameta.allure.Step;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import praktikum.pageobject.ConstructorPageObject;
+import praktikum.pageobject.HomePageObject;
 
-import java.util.concurrent.TimeUnit;
+import static org.junit.Assert.assertEquals;
 
-public class ConstructorTest {
-    private WebDriver driver;
-    private MainPage mainPage;
+public class ConstructorPageTest extends DriverTest {
 
-    @Before
-    public void setUp() {
-        //System.setProperty("webdriver.chrome.driver", "src/test/resources/yandexdriver.exe"); //для запуска тестов в Яндекс браузере нужно раскомментировать эту строку
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    private final String expectedClass = "tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect"; // Ожидаемое значение класса
+
+    @Test
+    @Step("Проверяем, что щелчок по булкам активирует соответствующую вкладку")
+    public void checkThatClickOnBunsMakeBunsThemeIsActive() {
+        HomePageObject homePage = new HomePageObject(driver);
+        ConstructorPageObject constructor = new ConstructorPageObject(driver);
+
+        // Переходим на главную страницу и в раздел конструктора
+        driver.get(HomePageObject.URL);
+        homePage.clickOnLinkToPersonalArea(); // Здесь можно добавить авторизацию
+        constructor.clickToLinkToConstructor();
+
+        // Перейдем на вкладку начинок
+        constructor.clickToFillingsMakeItActive();
+
+        // Теперь перейдем в раздел булок и проверяем активный класс
+        constructor.clickToBunMakeItActive();
+        String actualClass = constructor.waitForClassToBecomeActive(constructor.getBunsTopicLocator()); // Локатор для булок
+
+        assertEquals("Раздел булок не становится активным", expectedClass, actualClass);
     }
 
     @Test
-    @DisplayName("Transitions to the section Булки")
-    @Description("Checking if the button is selected by getting the text")
-    public void menuBunIsActiveByClick() {
-        mainPage = new MainPage(driver);
-        mainPage.open();
-        mainPage.clickFillingsButton();
-        mainPage.clickBunsButton();
-        Assert.assertEquals("Булки", mainPage.getTextFromSelectedMenu());
+    @Step("Проверяем, что щелчок по соусам активирует соответствующую вкладку")
+    public void checkThatClickOnSousesMakeSouseThemeIsActive() {
+        HomePageObject homePage = new HomePageObject(driver);
+        ConstructorPageObject constructor = new ConstructorPageObject(driver);
+
+        // Переходим на главную страницу и в раздел конструктора
+        driver.get(HomePageObject.URL);
+        homePage.clickOnLinkToPersonalArea(); // Здесь можно добавить авторизацию
+        constructor.clickToLinkToConstructor();
+
+        // Переходим в раздел соусов и проверяем активный класс
+        String actualClass = constructor.clickToSousesMakeItActive();
+        assertEquals("Раздел соусов не становится активным", expectedClass, actualClass);
     }
 
     @Test
-    @DisplayName("Transitions to the section Соусы")
-    @Description("Checking if the button is selected by getting the text")
-    public void menuSaucesIsActiveByClick() {
-        mainPage = new MainPage(driver);
-        mainPage.open();
-        mainPage.clickFillingsButton();
-        mainPage.clickSaucesButton();
-        Assert.assertEquals("Соусы", mainPage.getTextFromSelectedMenu());
-    }
+    @Step("Проверяем, что щелчок по начинкам активирует соответствующую вкладку")
+    public void checkThatFillingsOpensFillingsTheme() {
+        HomePageObject homePage = new HomePageObject(driver);
+        ConstructorPageObject constructor = new ConstructorPageObject(driver);
 
-    @Test
-    @DisplayName("Transitions to the section Начинки")
-    @Description("Checking if the button is selected by getting the text")
-    public void menuFillingIsActiveByClick() {
-        mainPage = new MainPage(driver);
-        mainPage.open();
-        mainPage.clickSaucesButton();
-        mainPage.clickFillingsButton();
-        Assert.assertEquals("Начинки", mainPage.getTextFromSelectedMenu());
-    }
+        // Переходим на главную страницу и в раздел конструктора
+        driver.get(HomePageObject.URL);
+        homePage.clickOnLinkToPersonalArea(); // Здесь можно добавить авторизацию
+        constructor.clickToLinkToConstructor();
 
-    @After
-    public void tearDown() {
-        driver.quit();
+        // Переходим в раздел начинок и проверяем активный класс
+        String actualClass = constructor.clickToFillingsMakeItActive();
+        assertEquals("Раздел начинок не становится активным", expectedClass, actualClass);
     }
 }

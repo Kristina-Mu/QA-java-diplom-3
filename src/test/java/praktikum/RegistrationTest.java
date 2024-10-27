@@ -1,130 +1,76 @@
 package praktikum;
 
-import io.qameta.allure.junit4.DisplayName;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
+import io.qameta.allure.Step;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import praktikum.pageobject.MainPage;
+import praktikum.pageobject.*;
 
-import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
-public class TransitionsTest {
-    @Rule
-    public LogInTest driverRule = new LogInTest();
-    private WebDriver driver;
-    private String nameUser;
-    private String emailUser;
-    private String passwordUser;
-    private String accessToken;
+public class RegistrationTest extends DriverTest {
 
-    private MainPage mainPage;
-    private Steps steps;
+    String emailReg = "1oQRtq4@yandex.ru";
+    String emailIncReg = "YYYYYYYY3@yandex.ru";
+    String passwordReg = "111111";
+    String nameReg = "Надежда";
+    UserData userDataReg = new UserData(emailReg, passwordReg, nameReg);
+    String incorrectPasswordReg = "00000";
 
-    @Before
-    public void setup() {
-        driver = driverRule.getDriver();
-        driver.get("https://stellarburgers.nomoreparties.site/");
+    @Test
+    @Step("Проверяем успешную регистрацию")
+    public void checkRegistrationSuccessfully() {
+        HomePageObject headPage = new HomePageObject(driver);
+        AuthorizationPageObject authorization = new AuthorizationPageObject(driver);
+        RegistrationPageObject registration = new RegistrationPageObject(driver);
 
-        nameUser = randomAlphabetic(12);
-        emailUser = randomAlphabetic(8) + "@yandex.ru";
-        passwordUser = randomAlphabetic(10);
+        // Нажимаем на ссылку "Личный кабинет" и авторизуемся
+        headPage.clickOnLinkToPersonalArea();
 
-        mainPage = new MainPage(driver);
-        steps = new Steps(driver);
+        // Нажимаем на ссылку "Зарегистрироваться"
+        authorization.clickTheLinkToRegistrationPageFromAuthorizationPage();
 
-        accessToken = steps.createUser(nameUser, emailUser, passwordUser);
-    }
+        // Заполняем поля формы
+        registration.emailFieldFillingThroughRegistration(emailReg);
+        registration.nameFieldFillingThroughRegistration(nameReg);
+        registration.passwordFieldFillingThroughRegistration(passwordReg);
+        registration.clickRegistrationButton();
 
-    @After
-    public void browserClose() {
-        if (accessToken != null) {
-            steps.deleteUser(accessToken);
-        }
-        driver.quit();
-    }
+        // Проверяем, что после регистрации попадаем на страницу авторизации с названием блока "Вход"
+        authorization.waitNameTopicVisibility();
+        assertEquals("Пользователь не прошел авторизацию",
+                "Забыли пароль? Восстановить пароль",
+                authorization.getTextFromQuestionOnAuthorizationForm());
 
-    private void closeModalIfOpen() {
-        try {
-            WebElement modal = driver.findElement(By.className("Modal_modal_overlay__x2ZCr"));
-            if (modal.isDisplayed()) {
-                modal.click(); // Закрытый модал
-            }
-        } catch (NoSuchElementException e) {
-            // Модальное окно не открыто
-        }
+        // Авторизуемся
+        authorization.fillingTheEmailField(emailReg);
+        authorization.fillingThePasswordField(passwordReg);
+
+        // И удаляем пользователя
+        UserAPI.makeLogout(UserAPI.getToken(userDataReg));
+        UserAPI.deleteUser(UserAPI.getToken(userDataReg), userDataReg);
     }
 
     @Test
-    @DisplayName("Переход в личный кабинет")
-    public void transitionToPersonalAccount() {
-        closeModalIfOpen();
-        steps.clickLoginButton(driver);
-        closeModalIfOpen();
-        steps.login(driver, emailUser, passwordUser);
-        steps.clickPersonalAccount(driver);
+    @Step("Проверяем сообщение об ошибке при некорректном пароле")
+    public void checkErrorMessageIfPasswordIncorrect() {
+        HomePageObject headPage = new HomePageObject(driver);
+        AuthorizationPageObject authorization = new AuthorizationPageObject(driver);
+        RegistrationPageObject registration = new RegistrationPageObject(driver);
 
-        ProfilePage profilePage = new ProfilePage(driver);
-        assertTrue(profilePage.findElementHeadOrder());
-    }
+        // Нажимаем на ссылку "Личный кабинет" и авторизуемся
+        headPage.clickOnLinkToPersonalArea();
 
-    @Test
-    @DisplayName("Переход из личного кабинета в конструктор")
-    public void transitionFromPersonalAccountToConstructor() {
-        closeModalIfOpen();
-        steps.clickLoginButton(driver);
-        closeModalIfOpen();
-        steps.login(driver, emailUser, passwordUser);
-        steps.clickPersonalAccount(driver);
+        // Нажимаем на ссылку "Зарегистрироваться"
+        authorization.clickTheLinkToRegistrationPageFromAuthorizationPage();
 
-        ProfilePage profilePage = new ProfilePage(driver);
-        profilePage.clickConstructorButton();
+        // Заполняем поля формы
+        registration.emailFieldFillingThroughRegistration(emailIncReg);
+        registration.nameFieldFillingThroughRegistration(nameReg);
+        registration.passwordFieldFillingThroughRegistration(incorrectPasswordReg);
+        registration.clickRegistrationButton();
 
-        assertTrue(mainPage.findConstructorHead());
-    }
-
-    @Test
-    @DisplayName("Переход из личного кабинета на логотип Stellar Burgers")
-    public void transitionFromPersonalAccountOnLogo() {
-        closeModalIfOpen();
-        steps.clickLoginButton(driver);
-        closeModalIfOpen();
-        steps.login(driver, emailUser, passwordUser);
-        steps.clickPersonalAccount(driver);
-
-        ProfilePage profilePage = new ProfilePage(driver);
-        profilePage.clickLogo();
-
-        assertTrue(mainPage.findConstructorHead());
-    }
-
-    @Test
-    @DisplayName("Переход к разделу «Булки»")
-    public void transitionToRolls() {
-        closeModalIfOpen();
-        mainPage.clickSaucesButton();
-        mainPage.clickRollsButton();
-        assertTrue(mainPage.activeTab().equals("Булки"));
-    }
-
-    @Test
-    @DisplayName("Переход к разделу «Соусы»")
-    public void transitionToSauces() {
-        closeModalIfOpen();
-        mainPage.clickSaucesButton();
-        assertTrue(mainPage.activeTab().equals("Соусы"));
-    }
-
-    @Test
-    @DisplayName("Переход к разделу «Начинки»")
-    public void transitionToFillings() {
-        closeModalIfOpen();
-        mainPage.clickFillingsButton();
-        assertTrue(mainPage.activeTab().equals("Начинки"));
+        // Проверяем сообщение об ошибке при пароле менее 6 символов
+        assertEquals("Не выдержано требование к минимальности пароля",
+                "Некорректный пароль",
+                registration.getErrorMessageWhenIncorrectPassword());
     }
 }
