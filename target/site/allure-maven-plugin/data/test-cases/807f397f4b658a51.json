@@ -1,0 +1,81 @@
+{
+  "uid" : "807f397f4b658a51",
+  "name" : "checkLoginViaRecoveryPasswordForm",
+  "fullName" : "praktikum.AuthorizationTest.checkLoginViaRecoveryPasswordForm",
+  "historyId" : "18772e2f68fbfadf648ba87f2bcebd79",
+  "time" : {
+    "start" : 1730061116722,
+    "stop" : 1730061127889,
+    "duration" : 11167
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Проверяем вход через форму восстановления пароля",
+      "time" : {
+        "start" : 1730061125099,
+        "stop" : 1730061125895,
+        "duration" : 796
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "praktikum"
+  }, {
+    "name" : "testClass",
+    "value" : "praktikum.AuthorizationTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "checkLoginViaRecoveryPasswordForm"
+  }, {
+    "name" : "suite",
+    "value" : "praktikum.AuthorizationTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Kristina.local"
+  }, {
+    "name" : "thread",
+    "value" : "27977@MacBook-Air-Kristina.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "807f397f4b658a51.json",
+  "parameterValues" : [ ]
+}

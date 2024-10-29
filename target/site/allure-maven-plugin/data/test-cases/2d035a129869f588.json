@@ -1,0 +1,81 @@
+{
+  "uid" : "2d035a129869f588",
+  "name" : "checkThatClickOnSousesMakeSouseThemeIsActive",
+  "fullName" : "praktikum.ConstructorPageTest.checkThatClickOnSousesMakeSouseThemeIsActive",
+  "historyId" : "2610c6212fc897980e010381cd28b5b2",
+  "time" : {
+    "start" : 1730061148883,
+    "stop" : 1730061160460,
+    "duration" : 11577
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Проверяем, что щелчок по соусам активирует соответствующую вкладку",
+      "time" : {
+        "start" : 1730061157772,
+        "stop" : 1730061158606,
+        "duration" : 834
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "praktikum"
+  }, {
+    "name" : "testClass",
+    "value" : "praktikum.ConstructorPageTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "checkThatClickOnSousesMakeSouseThemeIsActive"
+  }, {
+    "name" : "suite",
+    "value" : "praktikum.ConstructorPageTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Kristina.local"
+  }, {
+    "name" : "thread",
+    "value" : "27977@MacBook-Air-Kristina.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2d035a129869f588.json",
+  "parameterValues" : [ ]
+}

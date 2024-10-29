@@ -1,0 +1,81 @@
+{
+  "uid" : "533d703bef3a9756",
+  "name" : "checkToGoAwayFromPersonalArea",
+  "fullName" : "praktikum.PersonalAreaTest.checkToGoAwayFromPersonalArea",
+  "historyId" : "f131de9e132b9ddb379db3b6119c6ddb",
+  "time" : {
+    "start" : 1730061072041,
+    "stop" : 1730061083654,
+    "duration" : 11613
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Проверяем возможность выхода из личного кабинета",
+      "time" : {
+        "start" : 1730061079158,
+        "stop" : 1730061081508,
+        "duration" : 2350
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "praktikum"
+  }, {
+    "name" : "testClass",
+    "value" : "praktikum.PersonalAreaTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "checkToGoAwayFromPersonalArea"
+  }, {
+    "name" : "suite",
+    "value" : "praktikum.PersonalAreaTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Kristina.local"
+  }, {
+    "name" : "thread",
+    "value" : "27977@MacBook-Air-Kristina.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "533d703bef3a9756.json",
+  "parameterValues" : [ ]
+}

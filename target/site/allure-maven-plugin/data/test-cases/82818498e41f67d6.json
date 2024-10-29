@@ -1,0 +1,81 @@
+{
+  "uid" : "82818498e41f67d6",
+  "name" : "checkLoginViaRegistrationForm",
+  "fullName" : "praktikum.AuthorizationTest.checkLoginViaRegistrationForm",
+  "historyId" : "350950fde4b89b856d2cf9c0dc3e0a4e",
+  "time" : {
+    "start" : 1730061104746,
+    "stop" : 1730061116720,
+    "duration" : 11974
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Проверяем вход через форму регистрации",
+      "time" : {
+        "start" : 1730061113964,
+        "stop" : 1730061114746,
+        "duration" : 782
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "praktikum"
+  }, {
+    "name" : "testClass",
+    "value" : "praktikum.AuthorizationTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "checkLoginViaRegistrationForm"
+  }, {
+    "name" : "suite",
+    "value" : "praktikum.AuthorizationTest"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Air-Kristina.local"
+  }, {
+    "name" : "thread",
+    "value" : "27977@MacBook-Air-Kristina.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "82818498e41f67d6.json",
+  "parameterValues" : [ ]
+}
